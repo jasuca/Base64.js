@@ -1,6 +1,7 @@
-;(function () {
+define([], function() {
 
-  var object = typeof exports != 'undefined' ? exports : this; // #8: web workers
+  "use strict";
+
   var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
   function InvalidCharacterError(message) {
@@ -9,10 +10,11 @@
   InvalidCharacterError.prototype = new Error;
   InvalidCharacterError.prototype.name = 'InvalidCharacterError';
 
+  var object = {
+
   // encoder
   // [https://gist.github.com/999166] by [https://github.com/nignag]
-  object.btoa || (
-  object.btoa = function (input) {
+  btoa: function (input) {
     for (
       // initialize result and counter
       var block, charCode, idx = 0, map = chars, output = '';
@@ -30,12 +32,11 @@
       block = block << 8 | charCode;
     }
     return output;
-  });
+  },
 
   // decoder
   // [https://gist.github.com/1020396] by [https://github.com/atk]
-  object.atob || (
-  object.atob = function (input) {
+  atob: function (input) {
     input = input.replace(/=+$/, '')
     if (input.length % 4 == 1) {
       throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
@@ -55,6 +56,8 @@
       buffer = chars.indexOf(buffer);
     }
     return output;
-  });
+  }
+  };
 
-}());
+  return object;
+});

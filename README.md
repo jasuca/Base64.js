@@ -17,6 +17,15 @@ yepnope({
 })
 ```
 
+To add via requirejs use something like:
+
+```javascript
+require(["base64"], function(base64) {
+    window.atob = base64.atob
+    window.btoa = base64.btoa
+});
+```
+
 Base64.js stems from a [gist][4] by [yahiko][5].
 
 ### Running the test suite
