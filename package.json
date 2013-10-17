@@ -1,16 +1,16 @@
 {
   "name": "Base64",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Base64 encoding and decoding",
   "author": "David Chambers <dc@davidchambers.me>",
   "main": "./base64.js",
   "licenses": [{
     "type": "WTFPL",
-    "url": "https://raw.github.com/davidchambers/Base64.js/master/LICENSE"
+    "url": "https://raw.github.com/jasuca/Base64.js/master/LICENSE"
   }],
   "repository": {
     "type": "git",
-    "url": "git://github.com/davidchambers/Base64.js.git"
+    "url": "git://github.com/jasuca/Base64.js.git"
   },
   "devDependencies": {
     "coffee-script": "1.4.x",
